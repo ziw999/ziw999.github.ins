@@ -1,0 +1,202 @@
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    margin-top: 50px;
+}
+
+.lef {
+    grid-column: 1/2;
+}
+
+.center {
+    grid-column: 2/12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+}
+
+.righ {
+    grid-column: 12/13;
+}
+
+.centr-text {
+    grid-column: 1/13;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 1em;
+    background-color: rgba(191, 250, 230, 0.31);
+}
+
+.centr-text h2 {
+    text-align: center;
+    color: blue;
+}
+
+.modal.fade {
+    margin-top: 100px;
+}
+
+.text-mail {
+    display: flex;
+    flex-direction: row;
+}
+
+.mesub {
+    display: flex;
+    flex-direction: column;
+}
+
+.field,
+.mail {
+    width: 49%;
+    margin-bottom: 10px;
+}
+
+.field {
+    margin-right: 10px;
+}
+
+.mess {
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.sub {
+    background-color: rgb(94, 253, 253) !important;
+}
+
+.btn-primary {
+    background-color: rgb(248, 251, 251) !important;
+    color: black;
+}
+
+.btn-primary:hover {
+    color: darkred;
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(1);
+}
+
+.left-car {
+    grid-column: 1/2;
+}
+
+.carus {
+    grid-column: 2/7;
+    grid-row: 1/2;
+    margin-top: 50px;
+}
+
+.text-car {
+    grid-column: 8/12;
+    grid-row: 1/2;
+    margin-top: 110px;
+}
+
+.right-car {
+    grid-column: 11/13;
+}
+
+.text-car:hover {
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	40% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	50% {
+		transform: scale3d(0.85, 1.15, 1);
+	}
+
+	65% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	75% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.carus-text {
+    color: blue;
+    margin-bottom: 30px;
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	40% {
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	50% {
+		transform: scale3d(0.85, 1.15, 1);
+	}
+
+	65% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	75% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+
+@media(max-width: 1000px) {
+    .lef {
+        grid-column: 1/13;
+    }  
+    .center {
+        grid-column: 1/13;
+    }   
+    .righ {
+        grid-column: 1/13;
+    }
+    .left-car {
+        grid-column: 1/13;
+    }
+    
+    .carus {
+        grid-column: 1/13;
+    }
+    
+    .right-car {
+        grid-column: 1/13;
+    }
+}
+
+
+@media(max-width: 600px) {
+} 
