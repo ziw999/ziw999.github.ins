@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block img %}
+  <img src="{% static 'deps/images/tree-nature-forest-wilderness-branch-plant-99255-pxhere.com_.jpg' %}" alt="" />
+{% endblock %}
+
+{% block content %}
+
+<div class="carousel-grid">
+  <div class="left-car"></div>
+  {% for i in carousel %}
+    <div class="text-car">
+      <h4>{{ i.text }}</h4>
+    </div>
+  {% endfor %}
+  <div class="carus">
+    <div class="carus-text">
+      <h2>Анонсы</h2>
+    </div>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for i in carousel %}
+          <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+            <img src="{{ i.images.url }}" class="d-block w-100" alt="...">
+          </div>
+        {% endfor %}
+  
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="right-car"></div>
+</div>
+
+
+ <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      {% for i in carusel %}
+          <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+              
+              <img src="{{ i.image.url }}"
+                  class="d-block w-100" alt="...">
+              
+              <p>{{ i.text }}</p>
+          </div>
+      {% endfor %}
+      
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Заполните форму</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+               
+                <?php include '1.php' ?>
+                <form id = "order_form" class="main-order-form ml-form" action="/1.php" method="post">
+                  {% csrf_token %}
+                  <div class="forma">
+                    <div class="text-mail">
+                      <input class="field" type="text" name="name" title="Введите ваше имя" placeholder="Имя" required >         
+                      <input class="mail" type="tel" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="mesub">
+                      <textarea class="mess" name="message" placeholder="Сообщение" required></textarea>        
+                      <input class="sub" type="submit" name="submit" value="Отправить">
+                    </div>
+                  </div>
+               
+               </form>
+        
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="about-grid">
+        <div class="lef"></div>
+
+        {% for i in forms %}
+          <div class="center">
+            <div class="centr-text">
+              <h2>{{ i.name }}</h2>
+              <p>{{ i.text }}</p>  
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Задать вопрос
+              </button>       
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="righ"></div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
