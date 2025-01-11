@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 {% load static %}
 <html lang="en">
   <head>
@@ -49,53 +51,58 @@
       </div>
     </header>
 
-    <section>
-      <div class="container-fluid index">
-        <div class="row">
-          <div class="index-img">
-            <img src="{% static 'deps/images/erp.png' %}" alt="" />
-            <div class="col-lg-4 col-md-12 text-img">
-              <h1>Страховая компания</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error consequatur qui modi? Odio, eligendi! Quia assumenda possimus omnis quas aliquid cum deserunt commodi maiores!</p>
+    
+      <section>
+        <div class="container-fluid index">
+          <div class="row">
+            <div class="index-img">
+              <img src="{% static 'deps/images/erp.png' %}" alt="" />
+              <div class="col-lg-4 col-md-12 text-img">
+                <h1>Страховая компания</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error consequatur qui modi? Odio, eligendi! Quia assumenda possimus omnis quas aliquid cum deserunt commodi maiores!</p>
+              </div>
             </div>
-          </div>
-          <div class="index-grid">
-            <div class="left"></div>
-            
 
-            <div class="centr">
-              {% for i in form %}
-                <div class="card">
-                  <img src="{{ i.images.url }}" alt="{{ i.name }}" />
-                  <div class="centr-text">
-                    <h4>{{ i.name }}</h4>
-                    <p>{{ i.text }}</p>
+            {% block content %}
+            <div class="index-grid">
+              <div class="left"></div>
+              
+              
+              <div class="centr">
+                {% for i in form %}
+                  <div class="card">
+                    <img src="{{ i.images.url }}" alt="{{ i.name }}" />
+                    <div class="cent-text">
+                      <h4>{{ i.name }}</h4>
+                      <p>{{ i.text }}</p>
+                    </div>
                   </div>
-                </div>
-              {% endfor %}
+                {% endfor %}
+              </div>
+
+              <div class="right"></div>
             </div>
 
-            <div class="right"></div>
-          </div>
-
-          <div class="accord-grid">
-            <div class="accord-text">
-              <h2>Наши предложения</h2>
-            </div>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              {% for i in accord %}
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"><h4>{{ i.name }}</h4></button></h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">{{ i.text }}</div>
+            <div class="accord-grid">
+              <div class="accord-text">
+                <h2>Наши предложения</h2>
+              </div>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                {% for i in accord %}
+                  <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"><h4>{{ i.name }}</h4></button></h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">{{ i.text }}</div>
+                    </div>
                   </div>
-                </div>
-              {% endfor %}
+                {% endfor %}
+              </div>
             </div>
+            {% endblock content %}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    
 
     <footer>
       <div class="container-fluid footer">
