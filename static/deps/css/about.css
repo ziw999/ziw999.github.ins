@@ -73,9 +73,6 @@
     color: black;
 }
 
-.btn-primary:hover {
-    color: darkred;
-}
 
 .carousel-grid {
     display: grid;
