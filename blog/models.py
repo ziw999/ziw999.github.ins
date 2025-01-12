@@ -18,7 +18,7 @@ class Index(models.Model):
 
 
 class Accord(models.Model):
-    name = models.CharField(max_length = 100, verbose_name = 'Загаловок')
+    name = models.CharField(max_length = 100, verbose_name = 'Заголовок')
     text = models.TextField(verbose_name = 'Текст аккордиона')
 
     class Meta:
@@ -30,7 +30,7 @@ class Accord(models.Model):
 
 
 class About(models.Model):
-    name = models.CharField(max_length = 100, verbose_name = 'Загаловок')
+    name = models.CharField(max_length = 100, verbose_name = 'Заголовок')
     text = models.TextField(verbose_name = 'Текст')
 
     class Meta:
