@@ -119,6 +119,11 @@
     margin-top: 30px;
 }
 
+.accordion-button,
+.accordion-item {
+    color: bisque;
+}
+
 .btn.btn-danger.dropdown-toggle {
     background-color: bisque;
     color: black;

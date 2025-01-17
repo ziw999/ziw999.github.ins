@@ -87,3 +87,15 @@ def logout(request):
     messages.success(request, f'{request.user.username}, Вы вышли из аккаунта.')
     auth.logout(request)
     return redirect(reverse('users:login'))
+
+
+
+def table(request):
+    forms = User.objects.order_by('last_name').values()
+
+    context = {
+        'title': 'Данные пользователей.',
+        'forms': forms,
+    }
+
+    return render(request, 'users/tables.html', context)

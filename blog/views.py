@@ -5,8 +5,8 @@ from .models import Index, Accord, About, Carousel
 
 
 def index(request):
-    form = Index.objects.all()
-    accord = Accord.objects.all()
+    form = Index.objects.order_by('-id')[:6]
+    accord = Accord.objects.order_by('-id')
 
     context = {
         'title': 'Страховая компания',
